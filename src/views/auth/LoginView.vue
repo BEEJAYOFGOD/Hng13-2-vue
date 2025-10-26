@@ -5,7 +5,7 @@ import LoginForm from '@/components/auth/LoginForm.vue'
 <template>
   <div className="min-h-screen flex items-center justify-center bg-background px-4">
     <div className="w-full max-w-md">
-      {/* Header */}
+
       <div className="mb-8 text-center">
         <Link to="/" className="inline-flex items-center gap-2 mb-6">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -20,10 +20,10 @@ import LoginForm from '@/components/auth/LoginForm.vue'
       <LoginForm />
 
       <p className="text-center text-muted-foreground text-sm mt-6">
-        Don't have an account?{' '}
-        <Link to="/auth/signup" className="text-primary hover:underline font-medium">
+        Don't have an account?
+        <RouterLink href="/auth/signup" className="text-primary hover:underline font-medium">
           Sign up
-        </Link>
+        </RouterLink>
       </p>
     </div>
   </div>
