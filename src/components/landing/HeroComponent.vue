@@ -51,7 +51,7 @@ import waveMobile from '@/assets/wave-mobile.svg'
     </div>
     <div className="absolute bottom-0 w-full ">
       <img class="w-[200%] hidden md:block" :src="wave" alt="Wave decoration" />
-      <img class="w-[200] block md:hidden" :src="waveMobile" alt="Wave decoration" />
+      <img class="w-[200%] block md:hidden" :src="waveMobile" alt="Wave decoration" />
     </div>
   </section>
 </template>
