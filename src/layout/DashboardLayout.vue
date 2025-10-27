@@ -4,7 +4,7 @@ import { useAuth } from '@/composables/useAuth'
 import { useTickets } from '@/composables/useTickets'
 
 const { logout, user, loadSession } = useAuth();
-const { tickets, loadTickets } = useTickets();
+const { loadTickets } = useTickets();
 
 // Load session when component mounts
 onMounted(() => {
@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
   <header class="max-w-full w-full fixed top-0 border-b bg-white z-50">
-    <div class="flex justify-between items-center px-4 sm:px-12 lg:px-12 py-4">
+    <div class="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4">
       <h1 class="text-3xl font-bold">
         <RouterLink to="/dashboard">Dashboard</RouterLink>
       </h1>
