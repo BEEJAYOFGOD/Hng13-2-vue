@@ -5,22 +5,27 @@ import { useRouter } from 'vue-router'
 
 // ⚡ This state is SHARED across ALL components that use this composable
 const user = ref(null)
+const session = ref(null)
 const isLoading = ref(false)
 
 export function useAuth() {
   const router = useRouter()
 
-  // Check if user is logged in
-  const isAuthenticated = computed(() => !!user.value)
+  // Check if user is logged in (check if session exists)
+  const isAuthenticated = computed(() => !!session.value?.token)
 
   // Load saved session from localStorage
   function loadSession() {
-    const session = localStorage.getItem('ticketapp_session')
-    if (session) {
+    const savedSession = localStorage.getItem('ticketapp_session')
+    if (savedSession) {
       try {
-        user.value = JSON.parse(session)
+        const parsedSession = JSON.parse(savedSession)
+        session.value = parsedSession
+        user.value = parsedSession.user // Extract user from session
       } catch (e) {
         localStorage.removeItem('ticketapp_session')
+        session.value = null
+        user.value = null
       }
     }
   }
@@ -29,21 +34,26 @@ export function useAuth() {
   function login(credentials) {
     isLoading.value = true
 
-    // Simple validation (you can make this more complex)
+    // Simple validation
     if (credentials.email && credentials.password) {
-      const mockUser = {
-        id: 1,
+      const userData = {
+        id: Date.now(),
+        name: credentials.name || credentials.email.split('@')[0],
         email: credentials.email,
-        name: credentials.email.split('@')[0],
-        token: 'mock-token-' + Date.now(),
       }
 
-      user.value = mockUser
-      localStorage.setItem('ticketapp_session', JSON.stringify(mockUser))
+      const sessionData = {
+        token: 'mock-token-' + Date.now(),
+        user: userData,
+      }
+
+      user.value = sessionData.user
+      session.value = sessionData
+      localStorage.setItem('ticketapp_session', JSON.stringify(sessionData))
 
       isLoading.value = false
       router.push('/dashboard')
-      return { success: true }
+      return { success: true, session: sessionData }
     }
 
     isLoading.value = false
@@ -54,31 +64,38 @@ export function useAuth() {
   function signup(data) {
     isLoading.value = true
 
-    const newUser = {
+    const userData = {
       id: Date.now(),
-      email: data.email,
       name: data.name || data.email.split('@')[0],
-      token: 'mock-token-' + Date.now(),
+      email: data.email,
     }
 
-    user.value = newUser
-    localStorage.setItem('ticketapp_session', JSON.stringify(newUser))
+    const sessionData = {
+      token: 'mock-token-' + Date.now(),
+      user: userData,
+    }
+
+    user.value = sessionData.user
+    session.value = sessionData
+    localStorage.setItem('ticketapp_session', JSON.stringify(sessionData))
 
     isLoading.value = false
     router.push('/dashboard')
-    return { success: true }
+    return { success: true, session: sessionData }
   }
 
   // Logout function
   function logout() {
     user.value = null
+    session.value = null
     localStorage.removeItem('ticketapp_session')
     router.push('/')
   }
 
   // Return everything you want components to use
   return {
-    user,
+    user,        // Direct access to user object
+    session,     // Direct access to full session (token + user)
     isLoading,
     isAuthenticated,
     loadSession,

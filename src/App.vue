@@ -1,9 +1,13 @@
-<script setup></script>
+<script setup>
+// import { Toaster } from 'vue-sonner';
+import ToastContainer from '@/components/ToastContainer.vue'
+</script>
 
 <template>
-  <main>
+
     <RouterView />
-  </main>
+
+  <!-- Toaster outside the relative container -->
+   <ToastContainer />
 </template>
 
-<style scoped></style>

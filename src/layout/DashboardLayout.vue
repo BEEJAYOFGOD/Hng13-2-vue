@@ -1,12 +1,42 @@
-<script setup></script>
+<script setup>
+import { onMounted } from 'vue'
+import { useAuth } from '@/composables/useAuth'
+import { useTickets } from '@/composables/useTickets'
+
+const { logout, user, loadSession } = useAuth();
+const { tickets, loadTickets } = useTickets();
+
+// Load session when component mounts
+onMounted(() => {
+  loadSession(),
+  loadTickets()
+})
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-  <h2 className="text-amber-700 text-lg font-bold">hello</h2>
-</template>
+  <header class="max-w-full w-full fixed top-0 border-b bg-white z-50">
+    <div class="flex justify-between items-center px-4 sm:px-12 lg:px-12 py-4">
+      <h1 class="text-3xl font-bold">
+        <RouterLink to="/dashboard">Dashboard</RouterLink>
+      </h1>
 
-<style scoped></style>
+      <div class="flex gap-4 items-center">
+        <button
+          class="cursor-pointer bg-destructive/80 hover:bg-destructive/50 text-white px-4 py-2 rounded-md transition-colors"
+          @click="logout"
+        >
+          Log Out
+        </button>
+        <div v-if="user" class="h-8 w-8 bg-primary flex justify-center items-center rounded-full">
+          <p class="text-white font-semibold">
+            {{ user.name.charAt(0).toUpperCase() }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div className="pt-12">
+  <RouterView />
+  </div>
+</template>

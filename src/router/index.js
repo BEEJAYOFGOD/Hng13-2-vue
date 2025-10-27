@@ -9,7 +9,6 @@ import Login from '@/views/auth/LoginView.vue'
 import Signup from '@/views/auth/SignupView.vue'
 import Dashboard from '@/views/dashboard/DashboardView.vue'
 import AllTickets from '@/views/dashboard/AllTicketsView.vue'
-import DashboardView from '@/views/dashboard/DashboardView.vue'
 import CreateEditTicket from '@/views/dashboard/CreateEditTicketView.vue'
 import LandingPage from '@/views/LandingPage.vue'
 
