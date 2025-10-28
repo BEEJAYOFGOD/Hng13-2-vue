@@ -21,7 +21,7 @@
           <ul className="space-y-2">
             <li>
               <RouterLink
-                to="#features"
+                to="/#features"
                 className="text-muted-foreground hover:text-primary text-sm"
               >
                 Features
@@ -46,7 +46,7 @@
         </div>
 
         <div>
-          <h4 className="font-semibold text-foreground mb-4">Company</h4>
+          <h4 class="font-semibold text-foreground mb-4">Company</h4>
           <ul className="space-y-2">
             <li>
               <RouterLink to="#" className="text-muted-foreground hover:text-primary text-sm">
@@ -54,8 +54,8 @@
               </RouterLink>
             </li>
             <li>
-              <RouterLink href="#" className="text-muted-foreground hover:text-primary text-sm">
-                Blog
+              <RouterLink to="/" className="text-muted-foreground hover:text-primary text-sm">
+                Home
               </RouterLink>
             </li>
             <li>

@@ -34,7 +34,6 @@ const handleDeleteClick = (ticket) => {
 const confirmDelete = () => {
   if (ticketToDelete.value) {
     deleteTicket(ticketToDelete.value.id)
-    toast.success('Ticket deleted successfully')
     showDeleteDialog.value = false
     ticketToDelete.value = null
   }
@@ -76,7 +75,7 @@ const getStatusLabel = (status) => {
 </script>
 
 <template>
-  <main class="p-8 pt-12">
+  <main class="p-8 md:px-12 md:pt-12 px-6 pt-12  max-w-[1440px] mx-auto">
     <h1 class="text-3xl font-bold mb-4">
       {{ isActiveTicketsRoute ? 'Active Tickets' : 'All Tickets' }}
     </h1>
@@ -88,7 +87,7 @@ const getStatusLabel = (status) => {
         :class="[
           'px-4 py-2 rounded-lg transition-colors',
           !isActiveTicketsRoute
-            ? 'bg-blue-600 text-white'
+            ? 'bg-primary text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         ]"
       >
@@ -99,7 +98,7 @@ const getStatusLabel = (status) => {
         :class="[
           'px-4 py-2 rounded-lg transition-colors',
           isActiveTicketsRoute
-            ? 'bg-blue-600 text-white'
+            ? 'bg-primary text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         ]"
       >
@@ -167,9 +166,9 @@ const getStatusLabel = (status) => {
         </div>
       </template>
 
-      <p v-else class="text-center text-muted-foreground py-8">
+      <p v-else class="text-center flex flex-col items-center gap-8 text-muted-foreground py-8">
         {{ isActiveTicketsRoute ? 'No active tickets.' : 'No tickets yet.' }}
-        <RouterLink class="hover:underline" to="/dashboard">
+        <RouterLink class="hover:underline bg-primary w-fit px-4 text-white p-2 rounded-md" to="/dashboard">
           Create your first ticket here
         </RouterLink>
       </p>

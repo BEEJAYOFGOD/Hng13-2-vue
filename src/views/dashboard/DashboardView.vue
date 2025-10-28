@@ -3,7 +3,6 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuth } from '@/composables/useAuth'
 import { useTickets } from '@/composables/useTickets'
-import { toast } from 'vue-sonner'
 import DashboardStats from '@/components/dashboard/DashboardStats.vue'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -18,6 +17,7 @@ import {
   Pencil,
   Trash2,
 } from 'lucide-vue-next'
+
 
 const router = useRouter()
 const { user } = useAuth()
@@ -133,7 +133,6 @@ const handleDeleteClick = (ticket) => {
 const confirmDelete = () => {
   if (ticketToDelete.value) {
     deleteTicket(ticketToDelete.value.id)
-    toast.success('Ticket deleted successfully')
     showDeleteDialog.value = false
     ticketToDelete.value = null
   }
@@ -146,8 +145,8 @@ const cancelDelete = () => {
 </script>
 
 <template>
-  <section class="p-12 max-w-[1440px] mx-auto">
-    <h2 class="text-2xl font-bold">Welcome {{ user?.email }}</h2>
+  <section class="md:p-12 pt-12 px-6 max-w-[1440px] mx-auto">
+    <h2 class="md:text-2xl font-bold">Welcome {{ user?.email }}</h2>
 
     <!-- Stats Grid -->
     <div class="mt-8">
@@ -184,7 +183,7 @@ const cancelDelete = () => {
         <CardHeader>
           <div class="flex justify-between items-center">
             <CardTitle class="text-xl">Recent Tickets</CardTitle>
-            <Button variant="outline" @click="router.push('/tickets')">
+            <Button variant="outline" class="bg-primary hover:bg-hover text-white" @click="router.push('/tickets')">
               View All →
             </Button>
           </div>

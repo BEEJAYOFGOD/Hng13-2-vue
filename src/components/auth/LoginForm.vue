@@ -9,11 +9,14 @@ import { useAuth } from '@/composables/useAuth'
 
 const { login, isAuthenticated } = useAuth()
 const router = useRouter()
-import { toast } from 'vue-sonner'
+import { useToast } from '@/composables/useToast'
+
+const toast = useToast()
 
 // ============================================
 // VALIDATION RULES (Pure Functions)
 // ============================================
+
 
 const validateEmail = (email) => {
   const trimmed = email.trim()
@@ -118,11 +121,7 @@ const handleSubmit = async (e) => {
   e.preventDefault()
 
   if (!validateForm()) {
-    toast({
-      title: 'Error',
-      description: 'Please fix the errors in the form',
-      variant: 'destructive',
-    })
+    toast.error('Please fix the errors in the form')
     return
   }
 
@@ -137,11 +136,7 @@ const handleSubmit = async (e) => {
     formData.value = { email: '', password: '' }
     // Router navigation is handled in the composable
   } else {
-    toast({
-      title: 'Error',
-      description: result.error || 'Login failed',
-      variant: 'destructive',
-    })
+    toast.error('Login failed')
   }
 }
 

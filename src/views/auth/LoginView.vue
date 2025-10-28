@@ -21,7 +21,7 @@ import LoginForm from '@/components/auth/LoginForm.vue'
 
       <p className="text-center text-muted-foreground text-sm mt-6">
         Don't have an account?
-        <RouterLink href="/auth/signup" className="text-primary hover:underline font-medium">
+        <RouterLink to="/auth/signup" className="text-primary hover:underline font-medium">
           Sign up
         </RouterLink>
       </p>

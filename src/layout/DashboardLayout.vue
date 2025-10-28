@@ -2,8 +2,11 @@
 import { onMounted } from 'vue'
 import { useAuth } from '@/composables/useAuth'
 import { useTickets } from '@/composables/useTickets'
+import FooterComponent from '@/components/landing/FooterComponent.vue';
 
 const { logout, user, loadSession } = useAuth();
+
+console.log(user.value)
 const { loadTickets } = useTickets();
 
 // Load session when component mounts
@@ -39,4 +42,5 @@ onMounted(() => {
   <div className="pt-12">
   <RouterView />
   </div>
+<FooterComponent />
 </template>

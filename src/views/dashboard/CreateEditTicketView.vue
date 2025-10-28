@@ -326,7 +326,7 @@ const handleCancel = () => {
             </button>
             <button
               type="submit"
-              class="px-6 py-2 bg-blue-600 cursor-pointer text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              class="px-6 py-2 bg-primary cursor-pointer text-white rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               :disabled="isLoading"
             >
               {{

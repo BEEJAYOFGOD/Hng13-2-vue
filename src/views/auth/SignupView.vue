@@ -13,7 +13,7 @@ import SignupForm from '@/components/auth/SignupForm.vue'
       <!-- Header -->
       <div class="mb-8 text-center">
         <router-link to="/" class="inline-flex items-center gap-2 mb-6">
-          <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span class="text-white font-bold">T</span>
           </div>
           <span class="font-bold text-xl text-gray-900">Ticko</span>
@@ -32,12 +32,12 @@ import SignupForm from '@/components/auth/SignupForm.vue'
       <!-- Footer -->
       <p class="text-center text-gray-600 text-sm mt-6">
         Already have an account?
-        <router-link
+        <RouterLink
           to="/auth/login"
           class="text-blue-600 hover:underline font-medium"
         >
           Sign in
-        </router-link>
+        </RouterLink>
       </p>
     </div>
   </div>
