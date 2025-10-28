@@ -5,9 +5,10 @@ import waveMobile from '@/assets/wave-mobile.svg'
 </script>
 
 <template>
-  <section className="pt-64 md:pt-32 min-h-screen border-red-400  relative">
-    <div className="bg-primary h-6 w-6 animate-bounce absolute right-12 top-24 rounded-full " />
-    <div className="bg-primary h-6 w-6 animate-bounce absolute left-12 bottom-48 rounded-full" />
+  <section className="md:pt-32 min-h-screen flex flex-col md:block justify-center border-red-400  relative">
+    <div className="bg-primary h-6 w-6 animate-bounce absolute right-12 top-24 rounded-full  -z-9" />
+    <div className="bg-primary h-6 w-6 animate-bounce absolute left-12 bottom-48 rounded-full -z-9" />
+
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 z-4">
       <div className="flex justify-center gap-3 items-center">
         <span className="h-4 w-4 bg-primary rounded-full  animate-ping" />

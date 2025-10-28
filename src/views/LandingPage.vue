@@ -9,7 +9,7 @@ import CTA from '@/components/landing/CtaComponent.vue'
 </script>
 
 <template>
-  <main className="min-h-screen bg-background">
+
     <Header />
     <Hero />
     <Features />
@@ -17,5 +17,5 @@ import CTA from '@/components/landing/CtaComponent.vue'
     <HowItWorks />
     <FAQ />
     <CTA />
-  </main>
+
 </template>
