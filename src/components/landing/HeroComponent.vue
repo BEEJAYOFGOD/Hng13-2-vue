@@ -5,7 +5,7 @@ import waveMobile from '@/assets/wave-mobile.svg'
 </script>
 
 <template>
-  <section className="md:pt-32 min-h-screen flex flex-col md:block justify-center border-red-400  relative">
+  <section className="md:pt-28 min-h-screen flex flex-col md:block justify-center border-red-400  relative">
     <div className="bg-primary h-6 w-6 animate-bounce absolute right-12 top-24 rounded-full  -z-9" />
     <div className="bg-primary h-6 w-6 animate-bounce absolute left-12 bottom-48 rounded-full -z-9" />
 

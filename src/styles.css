@@ -272,7 +272,7 @@
 
   /* Container Max Width */
   .container-app {
-    @apply mx-auto max-w-[1440px] px-4 md:px-16;
+    @apply mx-auto max-w-[1440px] relative ;
   }
 
   /* Card Styles */
