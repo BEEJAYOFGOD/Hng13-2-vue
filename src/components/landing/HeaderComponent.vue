@@ -47,7 +47,7 @@ onMounted(() => {
             </RouterLink>
             <RouterLink
               to="/auth/signup"
-              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-hover transition-colors"
+              class="px-4 py-2 bg-primary text-white rounded-lg hover:bg-hover transition-colors"
             >
               Sign up
             </RouterLink>
