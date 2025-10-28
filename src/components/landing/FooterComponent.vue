@@ -28,17 +28,17 @@
               </RouterLink>
             </li>
             <li>
-              <Link href="#pricing" className="text-muted-foreground hover:text-primary text-sm">
+              <RouterLink to="#pricing" className="text-muted-foreground hover:text-primary text-sm">
                 Pricing
-              </Link>
+              </RouterLink>
             </li>
             <li>
-              <RouterLink href="#" className="text-muted-foreground hover:text-primary text-sm">
+              <RouterLink to="#" className="text-muted-foreground hover:text-primary text-sm">
                 Integrations
               </RouterLink>
             </li>
             <li>
-              <RouterLink href="#" className="text-muted-foreground hover:text-primary text-sm">
+              <RouterLink to="#" className="text-muted-foreground hover:text-primary text-sm">
                 Security
               </RouterLink>
             </li>
