@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { Pencil, Trash2 } from 'lucide-vue-next'
 import { useRouter, useRoute } from 'vue-router'
 import { useTickets } from '@/composables/useTickets'
-import { toast } from 'vue-sonner'
+
 
 const router = useRouter()
 const route = useRoute()
@@ -76,7 +76,7 @@ const getStatusLabel = (status) => {
 
 <template>
   <main class="p-8 md:px-12 md:pt-12 px-6 pt-12  max-w-[1440px] mx-auto">
-    <h1 class="text-3xl font-bold mb-4">
+    <h1 class="md:text-3xl text-lg font-bold mb-4">
       {{ isActiveTicketsRoute ? 'Active Tickets' : 'All Tickets' }}
     </h1>
 
@@ -85,7 +85,7 @@ const getStatusLabel = (status) => {
       <RouterLink
         to="/tickets"
         :class="[
-          'px-4 py-2 rounded-lg transition-colors',
+          'px-4 py-2 rounded-lg transition-colors ',
           !isActiveTicketsRoute
             ? 'bg-primary text-white'
             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
