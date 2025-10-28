@@ -18,7 +18,7 @@ onMounted(() => {
 
 <template>
   <header class="max-w-full w-full fixed top-0 border-b bg-white z-50">
-    <div class="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4">
+    <div class="flex max-w-[1440px] justify-between items-center px-4 sm:px-6 lg:px-12 py-4">
       <h1 class="md:text-3xl text-xl font-bold">
         <RouterLink class="text-primary hover:text-primary hover:underline" to="/dashboard">Dashboard</RouterLink>
       </h1>
