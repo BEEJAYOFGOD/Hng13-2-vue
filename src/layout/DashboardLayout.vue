@@ -39,7 +39,7 @@ onMounted(() => {
     </div>
   </header>
 
-  <div className="pt-12">
+  <div className="pt-12 bg-gray-200/30">
   <RouterView />
   </div>
 <FooterComponent />
