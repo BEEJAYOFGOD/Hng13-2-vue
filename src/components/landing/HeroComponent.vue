@@ -18,7 +18,7 @@ import waveMobile from '@/assets/wave-mobile.svg'
       </div>
 
       <h1
-        className="text-4xl md:text-5xl  text-center lg:text-6xl font-bold text-foreground leading-tight"
+        className="md:text-4xl text-2xl  text-center lg:text-6xl font-bold text-foreground leading-tight"
       >
         Manage Tickets with
         <span className="text-primary">Ease</span>

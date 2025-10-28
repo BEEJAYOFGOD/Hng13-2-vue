@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 <template>
   <section className="py-20 md:py-32 bg-primary text-primary-foreground">
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <h2 className="md:text-3xl text-2xl font-bold mb-6">
         Ready to Transform Your Ticket Management?
       </h2>
       <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
