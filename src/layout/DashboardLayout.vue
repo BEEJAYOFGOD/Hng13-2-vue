@@ -20,7 +20,7 @@ onMounted(() => {
   <header class="max-w-full w-full fixed top-0 border-b bg-white z-50">
     <div class="flex justify-between items-center px-4 sm:px-6 lg:px-12 py-4">
       <h1 class="text-3xl font-bold">
-        <RouterLink to="/dashboard">Dashboard</RouterLink>
+        <RouterLink class="text-primary hover:text-primary hover:underline" to="/dashboard">Dashboard</RouterLink>
       </h1>
 
       <div class="flex gap-4 items-center">
